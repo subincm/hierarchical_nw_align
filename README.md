@@ -45,6 +45,13 @@ Trying something like:
 may help. If all has went well, you should see an executable file named GHOST
 in the directory now.
 
+Installing MCL
+================
+
+1) Download MCL_Markov_Cluster from https://pypi.python.org/pypi/MCL_Markov_Cluster
+2) tar xvf MCL_Markov_Cluster-0.3.tar.gz && cd MCL_Markov_Cluster-0.3
+3) python setup.py install
+
 Installing Boost
 ================
 
@@ -63,7 +70,7 @@ execute the following commands:
   $ ./configure; make test
   $ sudo make install
   $ cd ../boost_1_55_0
-  $ ./boostrap.sh
+  $ ./bootstrap.sh
   $ sudo ./b2 install
 ```
 
