@@ -10,15 +10,15 @@ import pprint as pp
 from mcl import mcl_clustering
 #from mcl_clustering import networkx_mcl
 
-#INPUT_FILE ="/home/subin/Desktop/comp_bio/project/NAPA/NAPAbench/5-way/CG_set/Family_10/B.net"
-INPUT_FILE = "../Data/CJejuni/cjejuni.gexf"
+#INPUT_FILE ="../Data/NAPAbench/5-way/CG_set/Family_10/B.net"
+INPUT_FILE = "../Data/GHOSTData.fixed/Data/CJejuni/cjejuni.gexf"
 GEXF_FORMAT=".gexf"
 NET_FORMAT=".net"
 
 os.environ["PYTHONPATH"]
 
 if INPUT_FILE.endswith(GEXF_FORMAT):
-    G = nx.read_gexf("../Data/CJejuni/cjejuni.gexf", None, True)
+    G = nx.read_gexf(INPUT_FILE, None, True)
 elif INPUT_FILE.endswith(NET_FORMAT):
     G=nx.Graph()
     f = file(INPUT_FILE, 'r')
@@ -30,6 +30,9 @@ elif INPUT_FILE.endswith(NET_FORMAT):
         columns = [col.strip() for col in columns]
         if columns:
             G.add_edge(columns[0], columns[1])
+else:
+    print("Unsupported Format")
+    exit(0)
 print("Number of Nodes =", G.number_of_nodes(), "No of edges = ", G.number_of_edges())
 
 #nx.draw_spring(G)
