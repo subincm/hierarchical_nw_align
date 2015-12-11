@@ -10,8 +10,8 @@ import pprint as pp
 from mcl import mcl_clustering
 #from mcl_clustering import networkx_mcl
 
-#INPUT_FILE ="../Data/NAPAbench/5-way/CG_set/Family_10/B.net"
-INPUT_FILE = "../Data/GHOSTData.fixed/Data/CJejuni/cjejuni.gexf"
+INPUT_FILE ="../Data/NAPAbench/5-way/CG_set/Family_10/B.net"
+#INPUT_FILE = "../Data/GHOSTData.fixed/Data/CJejuni/cjejuni.gexf"
 GEXF_FORMAT=".gexf"
 NET_FORMAT=".net"
 
@@ -30,6 +30,9 @@ elif INPUT_FILE.endswith(NET_FORMAT):
         columns = [col.strip() for col in columns]
         if columns:
             G.add_edge(columns[0], columns[1])
+    #write to a gexf file, so that GHOST can read it as well
+    gexf_path = INPUT_FILE[:-len(NET_FORMAT)]+GEXF_FORMAT
+    nx.write_gexf(G, gexf_path)
 else:
     print("Unsupported Format")
     exit(0)
