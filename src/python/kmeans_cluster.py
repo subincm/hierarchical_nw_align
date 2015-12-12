@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 import Constants
 
 def kmeans_cluster(G, graph_name):
-    write_directory = os.path.join(KMEANS_PATH,graph_name)
+    write_directory = os.path.join(Constants.KMEANS_PATH,graph_name)
     if not os.path.exists(write_directory):
         os.makedirs(write_directory)
     nodeList = G.nodes()
