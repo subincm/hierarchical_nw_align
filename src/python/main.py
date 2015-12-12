@@ -1,14 +1,24 @@
-
+#!/usr/bin/python2.7
+import os
 import Constants
 import Utils
 import mcl_cluster
 import kmeans_cluster
 import dbscan_cluster
 #import hungarian
-import compute_cluster_param
+#import compute_cluster_param
+from collections import defaultdict
+from gayleshapley import *
 
 SDF_PATH="../../Data/GHOSTData.fixed/"
 
+def getMapOfGraphClusters():
+  ret = defaultdict(lambda: [])
+  for fgraph in os.walk(Constants.KMEANS_PATH):
+    for fcluster in os.listdir(fgraph[0]):
+      if fcluster.endswith(Constants.GEXF_FORMAT):
+	ret[os.path.basename(fgraph[0])].append(os.path.join(os.path.dirname(fgraph[0]), os.path.basename(fgraph[0]),fcluster))
+  return ret
 
 def letsStartAlgorithm():
     #hungarian.Hungarian_algo()
@@ -27,14 +37,24 @@ def letsStartAlgorithm():
 
     #print("**************Run DBScan*****************")
     #Run dbscan
-    dbscan_cluster.dbscan_cluster(G1, Constants.INPUT_FILE_1_NAME)
-    dbscan_cluster.dbscan_cluster(G2, Constants.INPUT_FILE_1_NAME)
+    #dbscan_cluster.dbscan_cluster(G1, Constants.INPUT_FILE_1_NAME)
+    #dbscan_cluster.dbscan_cluster(G2, Constants.INPUT_FILE_1_NAME)
 
     #Compute cluster parameters
-    filelist=compute_cluster_param.listfiles(SDF_PATH)
-    for f in filelist:
-         print(f)
-         print("avg:",compute_cluster_param.compute_average(f))
+    #filelist=compute_cluster_param.listfiles(SDF_PATH)
+    #for f in filelist:
+    #     print(f)
+    #     print("avg:",compute_cluster_param.compute_average(f))
+    
+    # Gayle-Shapely algo
+    mp = getMapOfGraphClusters()
+    for g in mp:
+      for h in mp:
+	if g < h:
+	  for gsg in mp[g]:
+	    for hsg in mp[h]:
+	      print gsg, hsg, getDistanceBetweenGraphs(gsg, hsg)
+    
 
 if __name__ == '__main__':
     letsStartAlgorithm()

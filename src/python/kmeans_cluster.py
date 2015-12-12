@@ -3,8 +3,6 @@ import os
 from sklearn.cluster import KMeans
 import Constants
 
-KMEANS_PATH = "../../Data/Kmeans"
-
 def kmeans_cluster(G, graph_name):
     write_directory = os.path.join(KMEANS_PATH,graph_name)
     if not os.path.exists(write_directory):
