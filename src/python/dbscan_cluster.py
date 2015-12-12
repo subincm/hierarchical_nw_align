@@ -29,7 +29,7 @@ def dbscan_cluster(G, graph_name):
             clusters[nodeLabel] = []
         clusters[nodeLabel].append(nodeList[nodeIndex])
     
-    print(label)
+    #print(label)
     #print("clusters",clusters)    
 
     #countNodes is used to test whether we have all the nodes in the clusters
