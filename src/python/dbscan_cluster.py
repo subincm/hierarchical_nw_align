@@ -15,7 +15,7 @@ def dbscan_cluster(G, graph_name):
     #kmeans = KMeans(init='k-means++', n_clusters=8, n_init=10)
     #kmeans.fit(matrix_data)
     #label = kmeans.labels_
-    print(matrix_data)
+    #print(matrix_data)
 
     # Compute DBSCAN
     db = DBSCAN(eps=1, min_samples=2).fit(matrix_data)

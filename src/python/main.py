@@ -3,14 +3,11 @@ import Constants
 import Utils
 import mcl_cluster
 import kmeans_cluster
-<<<<<<< HEAD
 import dbscan_cluster
-=======
-import hungarian
->>>>>>> db8272206737133715a4053999974eb9f4316be9
+#import hungarian
+import compute_cluster_param
 
-
-
+SDF_PATH="../../Data/GHOSTData.fixed/"
 
 
 def letsStartAlgorithm():
@@ -28,12 +25,16 @@ def letsStartAlgorithm():
     kmeans_cluster.kmeans_cluster(G1, Constants.INPUT_FILE_1_NAME)
     kmeans_cluster.kmeans_cluster(G2, Constants.INPUT_FILE_2_NAME)
 
-    print("**************DBScan kmeans*****************")
+    #print("**************Run DBScan*****************")
     #Run dbscan
     dbscan_cluster.dbscan_cluster(G1, Constants.INPUT_FILE_1_NAME)
     dbscan_cluster.dbscan_cluster(G2, Constants.INPUT_FILE_1_NAME)
 
-
+    #Compute cluster parameters
+    filelist=compute_cluster_param.listfiles(SDF_PATH)
+    for f in filelist:
+         print(f)
+         print("avg:",compute_cluster_param.compute_average(f))
 
 if __name__ == '__main__':
     letsStartAlgorithm()
