@@ -4,7 +4,7 @@ import Utils
 import mcl_cluster
 import kmeans_cluster
 import dbscan_cluster
-#import hungarian
+import hungarian
 import compute_cluster_param
 
 SDF_PATH="../../Data/GHOSTData.fixed/"
