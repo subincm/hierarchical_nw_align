@@ -3,6 +3,7 @@ import os
 from sklearn.cluster import KMeans
 import Constants
 
+
 KMEANS_PATH = "../../Data/Kmeans"
 
 def kmeans_cluster(G, graph_name):

@@ -5,3 +5,5 @@ INPUT_FILE_2_NAME = "B"
 #INPUT_FILE = "../Data/GHOSTData.fixed/Data/CJejuni/cjejuni.gexf"
 GEXF_FORMAT=".gexf"
 NET_FORMAT=".net"
+
+GHOST_PATH = "../../GHOST"
