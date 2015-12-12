@@ -9,7 +9,6 @@ def convertNetToGefx(input_file):
     G = None
     if input_file.endswith(Constants.GEXF_FORMAT):
         G = nx.read_gexf(input_file, None, True)
-        nx.write_gexf(G, input_file)
     elif input_file.endswith(Constants.NET_FORMAT):
         G=nx.Graph()
         f = file(input_file, 'r')

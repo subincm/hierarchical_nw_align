@@ -2,7 +2,7 @@
 import Constants
 import Utils
 import mcl_cluster
-
+import kmeans_cluster
 
 
 
@@ -15,8 +15,12 @@ def letsStartAlgorithm():
     G2 = Utils.convertNetToGefx(Constants.INPUT_FILE_NET_2)
     
     #Run one of the first clustering algorithm
-    mcl_cluster.mcl_cluster(G1)
-    mcl_cluster.mcl_cluster(G2)
+#     mcl_cluster.mcl_cluster(G1)
+#     mcl_cluster.mcl_cluster(G2)
+
+    #Run kmeans
+    kmeans_cluster.kmeans_cluster(G1, Constants.INPUT_FILE_1_NAME)
+    kmeans_cluster.kmeans_cluster(G2, Constants.INPUT_FILE_2_NAME)
 
 
 
