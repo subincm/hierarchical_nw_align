@@ -24,6 +24,7 @@ def letsStartAlgorithm():
     #Run kmeans
     kmeans_cluster.kmeans_cluster(G1, Constants.INPUT_FILE_1_NAME)
     kmeans_cluster.kmeans_cluster(G2, Constants.INPUT_FILE_2_NAME)
+    Utils.ComputeSpectralDistance(Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME, "Kmeans")
 
     #print("**************Run DBScan*****************")
     #Run dbscan
