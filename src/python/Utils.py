@@ -71,6 +71,7 @@ def ComputeSpectralDistance(graph_name1, graph_name2, algo):
                     cfg_file = generateCfgFile(network1, network2, dumpDistances=True,sigs1=sigs1, sigs2=sigs2)
                     subprocess.call([Constants.GHOST_PATH, "-c", cfg_file])
     subprocess.call("mv *sdf "+SDF_A_B_DIRECTORY, shell=True)
+    return SDF_A_B_DIRECTORY
 
 def generateCfgFile (network1, network2, dumpDistances=False, dumpSignatures=False,
                      sigs1=None, sigs2=None):
