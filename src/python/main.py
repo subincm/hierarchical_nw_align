@@ -53,14 +53,17 @@ def letsStartAlgorithm():
     #     print("avg:",compute_cluster_param.compute_average(f))
     
     # Gayle-Shapely algo
-    mp = getMapOfGraphClusters()
-    for g in mp:
-      for h in mp:
-	if g < h:
-	  for gsg in mp[g]:
-	    for hsg in mp[h]:
-	      print gsg, hsg, getDistanceBetweenGraphs(gsg, hsg)
-    
+    #mp = getMapOfGraphClusters()
+    #for g in mp:
+    #  for h in mp:
+	#if g < h:
+	 # for gsg in mp[g]:
+	  #  for hsg in mp[h]:
+	   #   print gsg, hsg, getDistanceBetweenGraphs(gsg, hsg)
+    clustersdf = '../../Data/Kmeans/SDF/cluster.sdf'
+    clustersdf = createClusterSDF('../../Data/Kmeans/SDF/A_B', '../../Data/Kmeans/SDF/A_B_cluster.sdf')
+    d, pairs = getDistanceAndPairsFromSDF(clustersdf)
+    print list(pairs)
 
 if __name__ == '__main__':
     letsStartAlgorithm()

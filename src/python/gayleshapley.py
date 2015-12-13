@@ -5,6 +5,8 @@ from collections import defaultdict
 import networkx as nx
 import pprint as pp
 import Constants
+import os
+import itertools
 
 # For more info, see https://en.wikipedia.org/wiki/Stable_marriage_problem
 def stablemarriage(Kings, Queens, pref):
@@ -24,7 +26,7 @@ def stablemarriage(Kings, Queens, pref):
       queensmatch[queen] = freeking
       freekings.remove(freeking)
     else:
-      if pref[queen].index(queensmatch[queen]) > pref[queen].index(freeking):
+      if freeking in pref[queen] and pref[queen].index(queensmatch[queen]) > pref[queen].index(freeking):
 	freekings.append(queensmatch[queen])
 	del kingsmatch[queensmatch[queen]]
 	del queensmatch[queen]
@@ -32,7 +34,7 @@ def stablemarriage(Kings, Queens, pref):
 	kingsmatch[freeking] = queen
 	queensmatch[queen] = freeking
 	freekings.remove(freeking)	
-  
+	
   if len(Kings) < len(Queens):
     for king in Kings:
       yield (king, kingsmatch.get(king, None))
@@ -82,11 +84,44 @@ def getDistanceBetweenGraphs(G, H, _cache_ = {}):
   for p in pref:
     pref[p].sort(key=lambda x: x[1])
     pref[p] = map(lambda x: x[0], pref[p])
-  
-  #for pair in stablemarriage(Kings, Queens, pref):
-  #  print pair
-  typecast = int if type(gc[gc.keys()[0]]) is int else str
-  return sum([abs(gc[typecast(p[0][1:])] - hc[typecast(p[1][1:])]) for p in stablemarriage(Kings, Queens, pref)])
+    
+  typecast = int if type(gc.keys()[0]) is int else str
+  sm = 0
+  for p in stablemarriage(Kings, Queens, pref):
+    sm = sm + abs(gc[typecast(p[0][1:])] - hc[typecast(p[1][1:])])
+  return sm
+
+def getDistanceAndPairsFromSDF(sdf):
+  A, B, prefs, nprefs = [], [], defaultdict(lambda: []), defaultdict(lambda: [])
+  for line in open(sdf):
+    a, b, d = line.split()
+    if a not in A:
+      A.append(a)
+    if b not in B:
+      B.append(b)
+    prefs[a].append((b, float(d)))
+    prefs[b].append((a, float(d)))
+    
+  for k in prefs.keys():    
+    prefs[k].sort(key=lambda x: x[1])
+    nprefs[k] = [x[0] for x in prefs[k]]   
+    
+  sm = 0
+  pairs_to_return, pairs_to_sum = itertools.tee(stablemarriage(A, B, nprefs))   
+  for pair in pairs_to_sum:
+    for b_dist in prefs[pair[0]]:
+      if pair[1] == b_dist[0]:
+	sm = sm + b_dist[1]
+	break
+  return sm, pairs_to_return
+    
+def createClusterSDF(indir, ret = '/tmp/cluster.sdf'):  
+  with open (ret, 'w') as f:
+    for c in os.listdir(indir):
+      G, H = c.split('.')[0].split('_vs_')    
+      d, pairs = getDistanceAndPairsFromSDF(os.path.join(indir, c))
+      f.write('\t'.join(map(str, [G, H, d])) + '\n')
+  return ret
 
 if __name__ == '__main__':
   # Test for Gayle Shapely
