@@ -1,6 +1,10 @@
 import networkx as nx
 #import pylab as py
 import pprint as pp
+import os
+import Constants
+import Utils
+
 from mcl import mcl_clustering
 
 def get_clusters(A):
@@ -20,3 +24,23 @@ def mcl_cluster(G):
     get_clusters(M)
     pp.pprint(M)
     pp.pprint("Found {} clusters.".format(len(clusters)))
+    
+def getMCLFromFile(infile, outdir, clusterfile = './mcl.DAT'):
+  cmd = Constants.MCL.format(infile, clusterfile)
+  os.system(cmd)
+  
+  maingraph = Utils.convertNetToGefx(infile)
+  graphname = os.path.basename(infile).split('.')[0]
+  outdirname = os.path.join(outdir, 'MCL', graphname)
+  if not os.path.exists(outdirname) :
+    os.makedirs(outdirname)
+  
+  clusterindex = 0
+  with open(clusterfile) as f:
+    for line in f:
+      cluster_nodes = line.split()
+      cluster_graph = maingraph.subgraph(cluster_nodes)
+      pathtoclustergraph = os.path.join(outdirname, graphname + str(clusterindex) + Constants.GEXF_FORMAT)
+      nx.write_gexf(cluster_graph, pathtoclustergraph)
+      clusterindex = clusterindex + 1
+  return outdirname

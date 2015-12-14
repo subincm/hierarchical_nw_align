@@ -32,6 +32,11 @@ def convertNetToGefx(input_file):
 
     return G
 
+def convertGraphToNet(G, outfile):
+  with open(outfile) as f:
+    for e in nx.generate_edgelist(G):
+      print e
+
 def ComputeSpectralDistance(graph_name1, graph_name2, algo):
     subgraph1Path = os.path.join("../../Data", algo, graph_name1)
     subgraph2Path = os.path.join("../../Data", algo, graph_name2)

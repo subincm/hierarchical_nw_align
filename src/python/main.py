@@ -70,5 +70,17 @@ def letsStartAlgorithm():
     #Generate alignment score of our graphs
     generate_alignment.generate_alignment_score(best_cluster_pairs, "Kmeans", "SDF", Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME)
 
+def letsStartAnotherAlgorithm():
+  A_sg_dir = mcl_cluster.getMCLFromFile('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.net', '../../Data')
+  B_sg_dir = mcl_cluster.getMCLFromFile('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.net', '../../Data')    
+  print Utils.ComputeSpectralDistance(A_sg_dir.split('/')[-1], B_sg_dir.split('/')[-1], "MCL")
+  
+  clustersdf = createClusterSDF('../../Data/MCL/SDF/A_B', '../../Data/MCL/SDF/A_B_cluster.sdf')
+  d, best_cluster_pairs = getDistanceAndPairsFromSDF(clustersdf)
+  print list(best_cluster_pairs)
+  generate_alignment.generate_alignment_score(best_cluster_pairs, "MCL", "SDF", A_sg_dir.split('/')[-1], B_sg_dir.split('/')[-1])
+
+
 if __name__ == '__main__':
-    letsStartAlgorithm()
+  #letsStartAlgorithm()
+  letsStartAnotherAlgorithm()
