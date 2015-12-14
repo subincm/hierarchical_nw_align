@@ -52,6 +52,11 @@ Installing MCL
 2) tar xvf MCL_Markov_Cluster-0.3.tar.gz && cd MCL_Markov_Cluster-0.3
 3) python setup.py install
 
+Original MCL code is available in src/mcl-14-137
+Compile it using 
+    ./configure --prefix=$HOME/local
+    make install
+
 Installing Boost
 ================
 
