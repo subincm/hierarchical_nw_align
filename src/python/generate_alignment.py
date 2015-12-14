@@ -12,6 +12,8 @@ def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, n
     for cluster1,cluster2 in best_cluster_pairs:
         subgraph1Path = os.path.join("../../Data", clusterAlgoName, networkName1, networkName1+str(cluster1) + Constants.GEXF_FORMAT)
         subgraph2Path = os.path.join("../../Data", clusterAlgoName, networkName2, networkName2+str(cluster2)  +  Constants.GEXF_FORMAT)
+        print subgraph1Path, '-'*10
+        print subgraph2Path, '-'*10
         cfg_file = Utils.generateCfgFile (subgraph1Path, subgraph2Path, dumpDistances=False, dumpSignatures=False,
                      sigs1=None, sigs2=None)
         subprocess.call([Constants.GHOST_PATH, "-c", cfg_file])
