@@ -54,8 +54,10 @@ Installing MCL
 
 Original MCL code is available in src/mcl-14-137
 Compile it using 
-    ./configure --prefix=$HOME/local
+    ./configure --prefix=/tmp/MCL
     make install
+The binary is available at /tmp/MCL/bin/mcl
+Run it as /tmp/MCL/bin/mcl <input file path egs:A.net> --abc -o <output_filename> -I 1.3
 
 Installing Boost
 ================
