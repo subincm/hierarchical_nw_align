@@ -10,7 +10,7 @@ import generate_alignment
 #import compute_cluster_param
 from collections import defaultdict
 from gayleshapley import *
-
+import subprocess
 import hungarian
 import compute_cluster_param
 
@@ -28,8 +28,9 @@ def getMapOfGraphClusters():
 def letsStartAlgorithm():
     #hungarian.Hungarian_algo()
     #Form networkx representation of both graphs
-    #G1 = Utils.convertNetToGefx(Constants.INPUT_FILE_NET_1)
-    #G2 = Utils.convertNetToGefx(Constants.INPUT_FILE_NET_2)
+    subprocess.call("rm -rf ../../Data/KMeans", shell=True)
+    G1 = Utils.convertNetToGefx(Constants.INPUT_FILE_1 + Constants.NET_FORMAT)
+    G2 = Utils.convertNetToGefx(Constants.INPUT_FILE_2 + Constants.NET_FORMAT)
     
     #Run one of the first clustering algorithm
 #     mcl_cluster.mcl_cluster(G1)
@@ -37,30 +38,9 @@ def letsStartAlgorithm():
 
     #print("**************Run kmeans*****************")
     #Run kmeans
-    num_clusters1 = 8
-    num_clusters2 = 8
-#     num_clusters1 = kmeans_cluster.kmeans_cluster(G1, Constants.INPUT_FILE_1_NAME)
-#     num_clusters2 = kmeans_cluster.kmeans_cluster(G2, Constants.INPUT_FILE_2_NAME)
-#     SDF_PATH = Utils.ComputeSpectralDistance(Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME, "Kmeans")
-
-    #print("**************Run DBScan*****************")
-    #Run dbscan
-    #dbscan_cluster.dbscan_cluster(G1, Constants.INPUT_FILE_1_NAME)
-    #dbscan_cluster.dbscan_cluster(G2, Constants.INPUT_FILE_1_NAME)
-    # Gayle-Shapely algo
-#     mp = getMapOfGraphClusters()
-#     for g in mp:
-#       for h in mp:
-#     if g < h:
-#       for gsg in mp[g]:
-#         for hsg in mp[h]:
-#           print gsg, hsg, getDistanceBetweenGraphs(gsg, hsg)
-    
-
-    clustersdf = '../../Data/Kmeans/SDF/A_B_cluster.sdf'
-    clustersdf = createClusterSDF('../../Data/Kmeans/SDF/A_B', '../../Data/Kmeans/SDF/A_B_cluster.sdf')
-    d, pairs = getDistanceAndPairsFromSDF(clustersdf)
-    print list(pairs)
+    num_clusters1 = kmeans_cluster.kmeans_cluster(G1, Constants.INPUT_FILE_1_NAME)
+    num_clusters2 = kmeans_cluster.kmeans_cluster(G2, Constants.INPUT_FILE_2_NAME)
+    SDF_PATH = Utils.ComputeSpectralDistance(Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME, "Kmeans")
 
     #Find best Matching for our bipartite graph
     #Compute cluster parameters
@@ -71,6 +51,7 @@ def letsStartAlgorithm():
     generate_alignment.generate_alignment_score(best_cluster_pairs, "Kmeans", "SDF", Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME)
 
 def letsStartAnotherAlgorithm():
+  subprocess.call("rm -rf ../../Data/MCL", shell=True)
   A_sg_dir = mcl_cluster.getMCLFromFile(Constants.INPUT_FILE_1+Constants.NET_FORMAT, '../../Data')
   B_sg_dir = mcl_cluster.getMCLFromFile(Constants.INPUT_FILE_2+Constants.NET_FORMAT, '../../Data')
   print Utils.ComputeSpectralDistance(A_sg_dir.split('/')[-1], B_sg_dir.split('/')[-1], "MCL")
@@ -86,8 +67,8 @@ def letsStartAnotherAlgorithm():
 
 
 if __name__ == '__main__':
-  #letsStartAlgorithm()
-  letsStartAnotherAlgorithm()
+  letsStartAlgorithm()
+  #letsStartAnotherAlgorithm()
 #   #print Utils.getEdgeCorrectness('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.net',
 #                  '/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.net',
 #                  '/home/rami/workspace/hierarchical_nw_align/Data/MCL/Score_Dir/SDF/A_B/Final_result/result.score.af')

@@ -55,7 +55,14 @@ def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, n
                      sigs1=None, sigs2=None)
     cmd = Constants.GHOST_PATH + " -c "+ cfg_file + " | tee "+ RESULT_LOG_FILE
     os.system(cmd)
+    subprocess.call("rm *sdf "+SCORE_DIR, shell=True)
+    subprocess.call("rm *gz "+SCORE_DIR, shell=True)
+    subprocess.call("rm *af "+SCORE_DIR, shell=True)
     
     #Generate our Final score
     RESULT_LOG_FILE = os.path.join(RESULT_LOG_DIR, Constants.OURS+"_"+Constants.RESULT_LOG_FILE)           
-    Utils.getEdgeCorrectness(graph1Path, graph2Path, final_align_file_path, RESULT_LOG_FILE)
+    Utils.getEdgeCorrectness(graph1Path, graph2Path, final_align_file_path, RESULT_LOG_FILE)   
+    subprocess.call("rm *sdf "+SCORE_DIR, shell=True)
+    subprocess.call("rm *gz "+SCORE_DIR, shell=True)
+    subprocess.call("rm *af "+SCORE_DIR, shell=True)
+

@@ -118,6 +118,8 @@ def getDistanceAndPairsFromSDF(sdf):
 def createClusterSDF(indir, ret = '/tmp/cluster.sdf'):  
   with open (ret, 'w') as f:
     for c in os.listdir(indir):
+      if c == ".DS_Store":
+          continue
       G, H = c.split('.')[0].split('_vs_')    
       d, pairs = getDistanceAndPairsFromSDF(os.path.join(indir, c))
       f.write('\t'.join(map(str, [G, H, d])) + '\n')
