@@ -88,6 +88,7 @@ def letsStartAnotherAlgorithm():
 if __name__ == '__main__':
   #letsStartAlgorithm()
   #letsStartAnotherAlgorithm()
-  print Utils.getEdgeCorrectness('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.net',
-				 '/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.net',
+  out = Utils.getEdgeCorrectness('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.gexf',
+				 '/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.gexf',
 				 '/home/rami/workspace/hierarchical_nw_align/Data/MCL/Score_Dir/SDF/A_B/Final_result/result.score.af')
+  print Utils.filter(out, Constants.EC_ICS_REGEX)

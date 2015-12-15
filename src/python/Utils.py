@@ -2,6 +2,7 @@ import Constants
 import networkx as nx
 import subprocess
 import os
+import re
 
 def convertNetToGefx(input_file):
     G = None
@@ -77,6 +78,10 @@ def ComputeSpectralDistance(graph_name1, graph_name2, algo):
                     subprocess.call([Constants.GHOST_PATH, "-c", cfg_file])
     subprocess.call("mv *sdf "+SDF_A_B_DIRECTORY, shell=True)
     return SDF_A_B_DIRECTORY
+
+def filter(instr, regex):  
+  pattern = re.compile(regex)
+  return pattern.findall(instr)
 
 def getEdgeCorrectness(network1, network2, align_file):
   cfg_file = generateCfgFile(network1, network2, dumpDistances=False, sigs1=None, sigs2=None, alignment_file=align_file)
