@@ -79,16 +79,19 @@ def ComputeSpectralDistance(graph_name1, graph_name2, algo):
     subprocess.call("mv *sdf "+SDF_A_B_DIRECTORY, shell=True)
     return SDF_A_B_DIRECTORY
 
+
 def filter(instr, regex):  
   pattern = re.compile(regex)
   return pattern.findall(instr)
 
-def getEdgeCorrectness(network1, network2, align_file):
-  cfg_file = generateCfgFile(network1, network2, dumpDistances=False, sigs1=None, sigs2=None, alignment_file=align_file)
-  process = subprocess.Popen([Constants.GHOST_PATH, "-c", cfg_file], stdout=subprocess.PIPE)
-  (output, err) = process.communicate()
-  exit_code = process.wait()
-  return output
+def getEdgeCorrectness(network1, network2, align_file, log_file_result):
+      cfg_file = generateCfgFile(network1, network2, dumpDistances=False, sigs1=None, sigs2=None, alignment_file=align_file)
+      process = subprocess.Popen([Constants.GHOST_PATH, "-c", cfg_file], stdout=subprocess.PIPE)
+      (output, err) = process.communicate()
+      exit_code = process.wait()
+      f = open(log_file_result,"w+")
+      f.write(output)
+      return output
 
 def generateCfgFile (network1, network2, dumpDistances=False, dumpSignatures=False,
                      sigs1=None, sigs2=None, alignment_file=False):

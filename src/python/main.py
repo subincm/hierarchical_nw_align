@@ -22,7 +22,7 @@ def getMapOfGraphClusters():
   for fgraph in os.walk(Constants.KMEANS_PATH):
     for fcluster in os.listdir(fgraph[0]):
       if fcluster.endswith(Constants.GEXF_FORMAT):
-	ret[os.path.basename(fgraph[0])].append(os.path.join(os.path.dirname(fgraph[0]), os.path.basename(fgraph[0]),fcluster))
+    ret[os.path.basename(fgraph[0])].append(os.path.join(os.path.dirname(fgraph[0]), os.path.basename(fgraph[0]),fcluster))
   return ret
 
 def letsStartAlgorithm():
@@ -71,8 +71,8 @@ def letsStartAlgorithm():
     generate_alignment.generate_alignment_score(best_cluster_pairs, "Kmeans", "SDF", Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME)
 
 def letsStartAnotherAlgorithm():
-  A_sg_dir = mcl_cluster.getMCLFromFile('../../Data/NAPAbench/8-way/CG_set/Family_1/A.net', '../../Data')
-  B_sg_dir = mcl_cluster.getMCLFromFile('../../Data/NAPAbench/8-way/CG_set/Family_1/B.net', '../../Data')
+  A_sg_dir = mcl_cluster.getMCLFromFile(Constants.INPUT_FILE_1+Constants.NET_FORMAT, '../../Data')
+  B_sg_dir = mcl_cluster.getMCLFromFile(Constants.INPUT_FILE_2+Constants.NET_FORMAT, '../../Data')
   print Utils.ComputeSpectralDistance(A_sg_dir.split('/')[-1], B_sg_dir.split('/')[-1], "MCL")
   
   clustersdf = createClusterSDF('../../Data/MCL/SDF/A_B', '../../Data/MCL/SDF/A_B_cluster.sdf')
@@ -87,8 +87,8 @@ def letsStartAnotherAlgorithm():
 
 if __name__ == '__main__':
   #letsStartAlgorithm()
-  #letsStartAnotherAlgorithm()
-  out = Utils.getEdgeCorrectness('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.gexf',
-				 '/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.gexf',
-				 '/home/rami/workspace/hierarchical_nw_align/Data/MCL/Score_Dir/SDF/A_B/Final_result/result.score.af')
-  print Utils.filter(out, Constants.EC_ICS_REGEX)
+  letsStartAnotherAlgorithm()
+#   #print Utils.getEdgeCorrectness('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.net',
+#                  '/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.net',
+#                  '/home/rami/workspace/hierarchical_nw_align/Data/MCL/Score_Dir/SDF/A_B/Final_result/result.score.af')
+  #print Utils.filter(out, Constants.EC_ICS_REGEX)
