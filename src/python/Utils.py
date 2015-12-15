@@ -78,9 +78,15 @@ def ComputeSpectralDistance(graph_name1, graph_name2, algo):
     subprocess.call("mv *sdf "+SDF_A_B_DIRECTORY, shell=True)
     return SDF_A_B_DIRECTORY
 
-def generateCfgFile (network1, network2, dumpDistances=False, dumpSignatures=False,
-                     sigs1=None, sigs2=None):
+def getEdgeCorrectness(network1, network2, align_file):
+  cfg_file = generateCfgFile(network1, network2, dumpDistances=False, sigs1=None, sigs2=None, alignment_file=align_file)
+  process = subprocess.Popen([Constants.GHOST_PATH, "-c", cfg_file], stdout=subprocess.PIPE)
+  (output, err) = process.communicate()
+  exit_code = process.wait()
+  return output
 
+def generateCfgFile (network1, network2, dumpDistances=False, dumpSignatures=False,
+                     sigs1=None, sigs2=None, alignment_file=False):
     cfg_file = "/tmp/napa.cfg"
     with open (cfg_file, 'w') as f:
         f.write ('[main]\n')
@@ -94,5 +100,6 @@ def generateCfgFile (network1, network2, dumpDistances=False, dumpSignatures=Fal
             f.write("dumpDistances: true\n")
         elif dumpSignatures is True:
             f.write("dumpSignatures: true\n")
-
+        if alignment_file:
+            f.write("alignFile: " + alignment_file + "\n")
     return cfg_file

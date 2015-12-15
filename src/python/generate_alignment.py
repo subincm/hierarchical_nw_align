@@ -31,9 +31,9 @@ def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, n
         if file.endswith(".af"):
             read_file = open(os.path.join(SCORE_DIR,file))
             final_text = final_text + read_file.read()
-    
-    write_file = open(os.path.join(FINAL_SCORE_DIR,Constants.RESULT_FILE),'w+')
+    final_file_path = os.path.join(FINAL_SCORE_DIR,Constants.RESULT_FILE)
+    write_file = open(final_file_path, 'w+')
     write_file.write(final_text)
-    
+    return final_file_path
                 
         

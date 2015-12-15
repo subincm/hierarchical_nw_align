@@ -81,9 +81,13 @@ def letsStartAnotherAlgorithm():
   best_cluster_pairs = [(pair[0][1:], pair[1][1:]) for pair in best_cluster_pairs]
   print best_cluster_pairs
   
-  generate_alignment.generate_alignment_score(best_cluster_pairs, "MCL", "SDF", Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME)
+  final_out = generate_alignment.generate_alignment_score(best_cluster_pairs, "MCL", "SDF", Constants.INPUT_FILE_1_NAME, Constants.INPUT_FILE_2_NAME)
+  
 
 
 if __name__ == '__main__':
   #letsStartAlgorithm()
-  letsStartAnotherAlgorithm()
+  #letsStartAnotherAlgorithm()
+  print Utils.getEdgeCorrectness('/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/A.net',
+				 '/home/rami/workspace/hierarchical_nw_align/Data/NAPAbench/8-way/CG_set/Family_1/B.net',
+				 '/home/rami/workspace/hierarchical_nw_align/Data/MCL/Score_Dir/SDF/A_B/Final_result/result.score.af')
