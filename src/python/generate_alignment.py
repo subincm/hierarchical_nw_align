@@ -9,7 +9,7 @@ def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, n
     SCORE_DIR = os.path.join("../../Data", clusterAlgoName, Constants.FINAL_SCORE_DIR, distAlgoName, networkName1+"_"+networkName2)
     if not os.path.exists(SCORE_DIR):
         os.makedirs(SCORE_DIR)
-    RESULT_LOG_DIR =  os.path.join("../..", Constants.FINAL_RESULT, Constants.DATASET_USED) 
+    RESULT_LOG_DIR =  os.path.join("../..", Constants.FINAL_RESULT, clusterAlgoName ,distAlgoName, Constants.DATASET_USED) 
     if not os.path.exists(RESULT_LOG_DIR):
         os.makedirs(RESULT_LOG_DIR)
     for cluster1,cluster2 in best_cluster_pairs:
