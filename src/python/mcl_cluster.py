@@ -25,8 +25,8 @@ def mcl_cluster(G):
     pp.pprint(M)
     pp.pprint("Found {} clusters.".format(len(clusters)))
     
-def getMCLFromFile(infile, outdir, clusterfile = './mcl.DAT'):
-  cmd = Constants.MCL.format(infile, clusterfile)
+def getMCLFromFile(infile, outdir,  mcl_param, clusterfile = './mcl.DAT'):
+  cmd = Constants.MCL.format(infile, clusterfile, mcl_param)
   os.system(cmd)
   
   maingraph = Utils.convertNetToGefx(infile)

@@ -4,12 +4,14 @@ import os
 import Constants
 import subprocess
 
-def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, networkName1, networkName2):
+def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, networkPath1, networkPath2, networkName1, networkName2,
+                             ways_type,dataset_type, family_type, hyper_param):
     
     SCORE_DIR = os.path.join("../../Data", clusterAlgoName, Constants.FINAL_SCORE_DIR, distAlgoName, networkName1+"_"+networkName2)
     if not os.path.exists(SCORE_DIR):
         os.makedirs(SCORE_DIR)
-    RESULT_LOG_DIR =  os.path.join("../..", Constants.FINAL_RESULT, clusterAlgoName ,distAlgoName, Constants.DATASET_USED) 
+    RESULT_LOG_DIR =  os.path.join("../..", Constants.FINAL_RESULT, clusterAlgoName , ways_type+"_"+dataset_type+"_"+family_type+"_"+
+                                   "_Par_" +str(hyper_param)) 
     if not os.path.exists(RESULT_LOG_DIR):
         os.makedirs(RESULT_LOG_DIR)
     for cluster1,cluster2 in best_cluster_pairs:
@@ -42,12 +44,12 @@ def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, n
     write_file.write(final_text)
     
     #Check whether gexf file exists or not
-    graph1Path = Constants.INPUT_FILE_1 + Constants.GEXF_FORMAT
-    graph2Path = Constants.INPUT_FILE_2 + Constants.GEXF_FORMAT
+    graph1Path = networkPath1 + Constants.GEXF_FORMAT
+    graph2Path = networkPath2 + Constants.GEXF_FORMAT
     if os.path.isfile(graph1Path) is False:
-        Utils.convertNetToGefx(Constants.INPUT_FILE_1 + Constants.NET_FORMAT)
+        Utils.convertNetToGefx(networkPath1 + Constants.NET_FORMAT)
     if os.path.isfile(graph2Path) is False:
-        Utils.convertNetToGefx(Constants.INPUT_FILE_2 + Constants.NET_FORMAT)
+        Utils.convertNetToGefx(networkPath2 + Constants.NET_FORMAT)
         
     #Generate Prof score
     RESULT_LOG_FILE = os.path.join(RESULT_LOG_DIR, Constants.PROF+"_"+Constants.RESULT_LOG_FILE)
