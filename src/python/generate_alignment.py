@@ -58,4 +58,4 @@ def generate_alignment_score(best_cluster_pairs,clusterAlgoName, distAlgoName, n
     
     #Generate our Final score
     RESULT_LOG_FILE = os.path.join(RESULT_LOG_DIR, Constants.OURS+"_"+Constants.RESULT_LOG_FILE)           
-    Utils.getEdgeCorrectness(graph1Path, graph2Path, final_align_file_path, RESULT_LOG_FILE)   
+    Utils.getEdgeCorrectness(graph1Path, graph2Path, final_align_file_path, RESULT_LOG_FILE)

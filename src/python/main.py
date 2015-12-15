@@ -22,7 +22,7 @@ def getMapOfGraphClusters():
   for fgraph in os.walk(Constants.KMEANS_PATH):
     for fcluster in os.listdir(fgraph[0]):
       if fcluster.endswith(Constants.GEXF_FORMAT):
-    ret[os.path.basename(fgraph[0])].append(os.path.join(os.path.dirname(fgraph[0]), os.path.basename(fgraph[0]),fcluster))
+	ret[os.path.basename(fgraph[0])].append(os.path.join(os.path.dirname(fgraph[0]), os.path.basename(fgraph[0]),fcluster))
   return ret
 
 def letsStartAlgorithm():

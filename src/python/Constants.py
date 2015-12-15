@@ -9,7 +9,7 @@ GEXF_FORMAT=".gexf"
 NET_FORMAT=".net"
 KMEANS_PATH = "../../Data/Kmeans"
 GHOST_PATH = "../../GHOST"
-MCL = "/tmp/MCL/bin/mcl {0} --abc -o {1} -I 1.3 > /dev/null 2>&1"
+MCL = "mcl {0} --abc -o {1} -I 1.3 > /dev/null 2>&1"
 FINAL_SCORE_DIR = "Score_Dir"
 FINAL_RESULT = "Final_result"
 EC_ICS_REGEX = 'Edge correctness \d+ \/ \d+ = (\d+\.\d+)%\nICS = (\d+\.\d+)%'
