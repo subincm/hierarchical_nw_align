@@ -16,7 +16,7 @@ import compute_cluster_param
 
 
 SDF_PATH="../../Data/GHOSTData.fixed/"
-DATASETS_TYPE =["CG_SET","DMC_SET","DMR_SET"]
+DATASETS_TYPE =["CG_set","DMC_set","DMR_set"]
 WAYS_TYPE = ["5-way","8-way"]
 FAMILY_TYPE = ["Family_1", "Family_2", "Family_3", "Family_4","Family_5"]
 def getMapOfGraphClusters():
