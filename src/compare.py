@@ -16,7 +16,9 @@ def getdict(path):
 list_of_lists = []
 for path in sys.argv[1:]:
   if os.path.isfile(path):
-    list_of_lists.append(getdict(path).values())
+    lst = getdict(path).values()
+    print filter(lambda x: not math.isnan(x), lst)
+    list_of_lists.append(lst)
 
-for xy in [x for x in zip(*list_of_lists) if not reduce(lambda x, y: x or y, [math.isnan(y) for y in x]) ]:
+for xy in [x for x in zip(*list_of_lists) if not reduce(lambda x, y: x or y, filter(lambda x: not math.isnan(x), x)) ]:
   print xy[0], xy[1]
