@@ -45,6 +45,15 @@ Trying something like:
 may help. If all has went well, you should see an executable file named GHOST
 in the directory now.
 
+Dependencies
+============
+Ensure that the following python packages are installed-
+1) munkres [1.0.7] from https://pypi.python.org/pypi/munkres/1.0.7
+2) scikit-learn [0.17] from https://pypi.python.org/pypi/scikit-learn/0.17
+3) networkx [1.10] from https://pypi.python.org/pypi/networkx
+
+
+
 Installing MCL
 ================
 
@@ -57,7 +66,7 @@ Compile it using
     ./configure --prefix=/tmp/MCL
     make install
 The binary is available at /tmp/MCL/bin/mcl
-Run it as /tmp/MCL/bin/mcl <input file path egs:A.net> --abc -o <output_filename> -I 1.3
+Try running it as /tmp/MCL/bin/mcl <input file path egs:A.net> --abc -o <output_filename> -I 1.3
 
 Installing Boost
 ================
@@ -272,3 +281,9 @@ The GHOST program uses the following free-to-use libraries and files:
   3. threadpool [threadpool.sourceforge.net](threadpool.sourceforge.net)
   4. fastapprox [https://code.google.com/p/fastapprox](https://code.google.com/p/fastapprox)
 
+Running Hierarchichal clustering
+================================
+1) cd hierarchical_nw_align/src/python/
+2) Edit Constants.py to provide paths to the data folder and to output.
+3) python main.py
+4) ./fetch_results.sh <PATH_TO_OUTPUT_FOLDER> would give a concise report of edge correctness and ICS scores across all runs from the results. This can be run only on Linux/OSX.
