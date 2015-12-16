@@ -14,11 +14,18 @@ def getdict(path):
 
 # ---------------MAIN---------------
 list_of_lists = []
+def filter_fn(x):
+ for y in x:
+  if math.isnan(y):
+    return False
+  elif 0 == y:
+    return False
+ return True
+
 for path in sys.argv[1:]:
   if os.path.isfile(path):
     lst = getdict(path).values()
-    print filter(lambda x: not math.isnan(x), lst)
     list_of_lists.append(lst)
 
-for xy in [x for x in zip(*list_of_lists) if not reduce(lambda x, y: x or y, filter(lambda x: not math.isnan(x), x)) ]:
-  print xy[0], xy[1]
+comparison_list = zip(*list_of_lists)
+print zip(*filter(filter_fn, comparison_list))
