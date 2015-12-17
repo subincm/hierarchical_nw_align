@@ -1,0 +1,36 @@
+extracted: A_19.gexf in 0 milliseconds
+extracted: B_19.gexf in 0 milliseconds
+creating: A_19.sig.gz
+40% [======================================>                         ] ETA 0s   100%[================================================================] ETA 0s   
+created: A_19.sig.gz in 0 milliseconds
+creating: B_19.sig.gz
+10% [============>                                                   ] ETA 0s   40% [================================>                               ] ETA 0s   70% [============================================>                   ] ETA 0s   
+created: B_19.sig.gz in 0 milliseconds
+loading sigs file: A_19.sig.gz
+loaded 5 vertices in 0ms
+loading sigs file: B_19.sig.gz
+loaded 10 vertices in 0ms
+
+calculating D_alphas on 8 threads
+20% [============>                                                   ] ETA 0s   40% [=========================>                                      ] ETA 0s   60% [======================================>                         ] ETA 0s   80% [===================================================>            ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 50 distances in 0s
+
+aligning graphs...
+aligned 5 nodes in 0 milliseconds
+5 nodes aligned
+Edge correctness 5 / 7 = 71.4286%
+ICS = 100%
+
+running PISWAP iteration, 100% unconstrained
+20% [============>                                                   ] ETA 0s   40% [=========================>                                      ] ETA 0s   60% [======================================>                         ] ETA 0s   80% [===================================================>            ] ETA 0s   100%[================================================================] ETA 0s   
+added 2 edges in 1ms
+running PISWAP iteration, 100% unconstrained
+20% [============>                                                   ] ETA 0s   40% [=========================>                                      ] ETA 0s   60% [======================================>                         ] ETA 0s   80% [===================================================>            ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+5 nodes aligned
+Edge correctness 7 / 7 = 100%
+ICS = 100%
+
+5 nodes aligned
+Edge correctness 7 / 7 = 100%
+ICS = 100%

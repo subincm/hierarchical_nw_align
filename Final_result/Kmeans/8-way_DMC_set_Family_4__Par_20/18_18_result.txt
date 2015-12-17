@@ -1,0 +1,35 @@
+read edges error
+extracted: A18.gexf in 0 milliseconds
+read edges error
+extracted: B18.gexf in 0 milliseconds
+creating: A18.sig.gz
+50% [================================>                               ] ETA 0s   
+created: A18.sig.gz in 0 milliseconds
+creating: B18.sig.gz
+5%  [===>                                                            ] ETA 0s   11% [=======>                                                        ] ETA 0s   23% [===============>                                                ] ETA 0s   29% [==================>                                             ] ETA 0s   35% [======================>                                         ] ETA 0s   41% [==========================>                                     ] ETA 0s   47% [==============================>                                 ] ETA 0s   52% [=================================>                              ] ETA 0s   58% [=====================================>                          ] ETA 0s   64% [=========================================>                      ] ETA 0s   70% [=============================================>                  ] ETA 0s   76% [====================================================>           ] ETA 0s   88% [========================================================>       ] ETA 0s   94% [============================================================>   ] ETA 0s   100%[================================================================] ETA 0s   
+created: B18.sig.gz in 0 milliseconds
+loading sigs file: A18.sig.gz
+loaded 2 vertices in 0ms
+loading sigs file: B18.sig.gz
+loaded 17 vertices in 0ms
+
+calculating D_alphas on 8 threads
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 34 distances in 0s
+
+aligning graphs...
+aligned 2 nodes in 0 milliseconds
+2 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+running PISWAP iteration, 100% unconstrained
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+2 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+2 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%

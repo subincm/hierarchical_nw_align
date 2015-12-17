@@ -1,0 +1,34 @@
+extracted: A35.gexf in 0 milliseconds
+read edges error
+extracted: B35.gexf in 0 milliseconds
+creating: A35.sig.gz
+12% [========>                                                       ] ETA 0s   37% [================================>                               ] ETA 0s   87% [========================================================>       ] ETA 0s   
+created: A35.sig.gz in 0 milliseconds
+creating: B35.sig.gz
+100%[================================================================] ETA 0s   
+created: B35.sig.gz in 0 milliseconds
+loading sigs file: A35.sig.gz
+loaded 8 vertices in 0ms
+loading sigs file: B35.sig.gz
+loaded 1 vertices in 0ms
+
+calculating D_alphas on 8 threads
+12% [========>                                                       ] ETA 0s   25% [================>                                               ] ETA 0s   50% [================================>                               ] ETA 0s   62% [========================================>                       ] ETA 0s   75% [================================================>               ] ETA 0s   87% [========================================================>       ] ETA 0s   
+finished calculating 8 distances in 0s
+
+aligning graphs...
+aligned 1 nodes in 0 milliseconds
+1 nodes aligned
+Edge correctness 0 / 18 = 0%
+ICS = nan%
+
+running PISWAP iteration, 100% unconstrained
+100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+1 nodes aligned
+Edge correctness 0 / 18 = 0%
+ICS = nan%
+
+1 nodes aligned
+Edge correctness 0 / 18 = 0%
+ICS = nan%

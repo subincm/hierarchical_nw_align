@@ -1,0 +1,35 @@
+read edges error
+extracted: A_15.gexf in 0 milliseconds
+read edges error
+extracted: B_15.gexf in 0 milliseconds
+creating: A_15.sig.gz
+25% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+created: A_15.sig.gz in 0 milliseconds
+creating: B_15.sig.gz
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   83% [=====================================================>          ] ETA 0s   
+created: B_15.sig.gz in 0 milliseconds
+loading sigs file: A_15.sig.gz
+loaded 4 vertices in 0ms
+loading sigs file: B_15.sig.gz
+loaded 6 vertices in 0ms
+
+calculating D_alphas on 8 threads
+25% [================>                                               ] ETA 0s   50% [================================>                               ] ETA 0s   75% [================================================>               ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 24 distances in 0s
+
+aligning graphs...
+aligned 4 nodes in 0 milliseconds
+4 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+running PISWAP iteration, 100% unconstrained
+25% [================>                                               ] ETA 0s   50% [================================>                               ] ETA 0s   75% [================================================>               ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+4 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+4 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%

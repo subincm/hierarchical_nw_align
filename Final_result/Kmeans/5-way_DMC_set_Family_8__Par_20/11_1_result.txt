@@ -1,0 +1,34 @@
+read edges error
+extracted: A11.gexf in 0 milliseconds
+extracted: B1.gexf in 0 milliseconds
+creating: A11.sig.gz
+100%[================================================================] ETA 0s   
+created: A11.sig.gz in 0 milliseconds
+creating: B1.sig.gz
+3%  [==>                                                             ] ETA 0s   7%  [====>                                                           ] ETA 0s   11% [=======>                                                        ] ETA 0s   18% [===========>                                                    ] ETA 0s   25% [================>                                               ] ETA 0s   40% [==========================>                                     ] ETA 0s   44% [============================>                                   ] ETA 0s   48% [==============================>                                 ] ETA 0s   51% [===================================>                            ] ETA 0s   62% [========================================>                       ] ETA 0s   70% [=============================================>                  ] ETA 0s   77% [=================================================>              ] ETA 0s   81% [====================================================>           ] ETA 0s   88% [========================================================>       ] ETA 0s   92% [===========================================================>    ] ETA 0s   96% [=============================================================>  ] ETA 0s   100%[================================================================] ETA 0s   
+created: B1.sig.gz in 0 milliseconds
+loading sigs file: A11.sig.gz
+loaded 2 vertices in 0ms
+loading sigs file: B1.sig.gz
+loaded 27 vertices in 0ms
+
+calculating D_alphas on 8 threads
+50% [================================>                               ] ETA 0s   
+finished calculating 54 distances in 0s
+
+aligning graphs...
+aligned 2 nodes in 0 milliseconds
+2 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+running PISWAP iteration, 100% unconstrained
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+2 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+2 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%

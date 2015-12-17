@@ -1,0 +1,35 @@
+read edges error
+extracted: A_0.gexf in 0 milliseconds
+read edges error
+extracted: B_0.gexf in 0 milliseconds
+creating: A_0.sig.gz
+15% [=========>                                                      ] ETA 0s   23% [==============>                                                 ] ETA 0s   30% [===================>                                            ] ETA 0s   46% [=============================>                                  ] ETA 0s   61% [============================================>                   ] ETA 0s   76% [=================================================>              ] ETA 0s   84% [======================================================>         ] ETA 0s   92% [===========================================================>    ] ETA 0s   100%[================================================================] ETA 0s   
+created: A_0.sig.gz in 0 milliseconds
+creating: B_0.sig.gz
+100%[================================================================] ETA 0s   
+created: B_0.sig.gz in 0 milliseconds
+loading sigs file: A_0.sig.gz
+loaded 13 vertices in 0ms
+loading sigs file: B_0.sig.gz
+loaded 1 vertices in 0ms
+
+calculating D_alphas on 8 threads
+7%  [====>                                                           ] ETA 0s   15% [=========>                                                      ] ETA 0s   23% [==============>                                                 ] ETA 0s   30% [===================>                                            ] ETA 0s   38% [========================>                                       ] ETA 0s   46% [=============================>                                  ] ETA 0s   53% [==================================>                             ] ETA 0s   61% [=======================================>                        ] ETA 0s   69% [============================================>                   ] ETA 0s   76% [=================================================>              ] ETA 0s   84% [======================================================>         ] ETA 0s   92% [===========================================================>    ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 13 distances in 0s
+
+aligning graphs...
+aligned 1 nodes in 0 milliseconds
+1 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+running PISWAP iteration, 100% unconstrained
+100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+1 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
+
+1 nodes aligned
+Edge correctness 0 / 0 = nan%
+ICS = nan%
