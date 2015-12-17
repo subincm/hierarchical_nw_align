@@ -56,6 +56,9 @@ def ComputeSpectralDistance(graph_name1, graph_name2, algo):
     for path in [subgraph1Path, subgraph2Path]:
         subgraphFiles = os.listdir(path)
         for f1 in subgraphFiles:
+            if algo == "SpectralC":
+                if "_I" in f1 is False:
+                    continue
             network1 = os.path.join(path, f1)
             network2 = os.path.join(path, f1)
             cfg_file = generateCfgFile(network1, network2, dumpSignatures=True)
@@ -67,10 +70,16 @@ def ComputeSpectralDistance(graph_name1, graph_name2, algo):
     subgraph2Files = os.listdir(subgraph2Path)
 
     for f1 in subgraph1Files:
+        if algo == "SpectralC":
+                if "_I" in f1 is False:
+                    continue
         if f1.endswith(Constants.GEXF_FORMAT):
             network1 = os.path.join(subgraph1Path, f1)
             sigs1 = os.path.join(subgraph1Path, f1[:-len(Constants.GEXF_FORMAT)]+".sig.gz")
             for f2 in subgraph2Files:
+                if algo == "SpectralC":
+                    if "_I" in f1 is False:
+                        continue
                 if f2.endswith(Constants.GEXF_FORMAT):
                     network2 = os.path.join(subgraph2Path, f2)
                     sigs2 = os.path.join(subgraph2Path, f2[:-len(Constants.GEXF_FORMAT)]+".sig.gz")
