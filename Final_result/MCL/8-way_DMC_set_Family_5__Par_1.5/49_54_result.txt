@@ -1,0 +1,33 @@
+extracted: A49.gexf in 0 milliseconds
+extracted: B54.gexf in 0 milliseconds
+creating: A49.sig.gz
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   50% [================================>                               ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+created: A49.sig.gz in 1 milliseconds
+creating: B54.sig.gz
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+created: B54.sig.gz in 0 milliseconds
+loading sigs file: A49.sig.gz
+loaded 6 vertices in 0ms
+loading sigs file: B54.sig.gz
+loaded 2 vertices in 0ms
+
+calculating D_alphas on 2 threads
+16% [==========>                                                     ] ETA 0s   
+finished calculating 12 distances in 0s
+
+aligning graphs...
+aligned 2 nodes in 0 milliseconds
+2 nodes aligned
+Edge correctness 1 / 5 = 20%
+ICS = 100%
+
+running PISWAP iteration, 100% unconstrained
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+2 nodes aligned
+Edge correctness 1 / 5 = 20%
+ICS = 100%
+
+2 nodes aligned
+Edge correctness 1 / 5 = 20%
+ICS = 100%

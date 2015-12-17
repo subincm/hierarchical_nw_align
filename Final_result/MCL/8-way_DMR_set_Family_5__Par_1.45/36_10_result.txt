@@ -1,0 +1,33 @@
+extracted: A36.gexf in 0 milliseconds
+extracted: B10.gexf in 1 milliseconds
+creating: A36.sig.gz
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   50% [================================>                               ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+created: A36.sig.gz in 1 milliseconds
+creating: B10.sig.gz
+3%  [==>                                                             ] ETA 0s   7%  [====>                                                           ] ETA 0s   11% [=======>                                                        ] ETA 0s   14% [=========>                                                      ] ETA 0s   18% [===========>                                                    ] ETA 0s   22% [==============>                                                 ] ETA 0s   25% [================>                                               ] ETA 0s   100%[================================================================] ETA 0s   
+created: B10.sig.gz in 5 milliseconds
+loading sigs file: A36.sig.gz
+loaded 6 vertices in 0ms
+loading sigs file: B10.sig.gz
+loaded 27 vertices in 3ms
+
+calculating D_alphas on 2 threads
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   50% [================================>                               ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 162 distances in 0s
+
+aligning graphs...
+aligned 6 nodes in 0 milliseconds
+6 nodes aligned
+Edge correctness 5 / 7 = 71.4286%
+ICS = 100%
+
+running PISWAP iteration, 100% unconstrained
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   50% [================================>                               ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 1ms
+6 nodes aligned
+Edge correctness 5 / 7 = 71.4286%
+ICS = 100%
+
+6 nodes aligned
+Edge correctness 5 / 7 = 71.4286%
+ICS = 100%

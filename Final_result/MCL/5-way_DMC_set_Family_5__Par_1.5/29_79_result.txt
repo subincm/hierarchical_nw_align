@@ -1,0 +1,33 @@
+extracted: A29.gexf in 0 milliseconds
+extracted: B79.gexf in 0 milliseconds
+creating: A29.sig.gz
+7%  [====>                                                           ] ETA 0s   
+created: A29.sig.gz in 2 milliseconds
+creating: B79.sig.gz
+25% [================>                                               ] ETA 0s   50% [================================>                               ] ETA 0s   75% [================================================>               ] ETA 0s   100%[================================================================] ETA 0s   
+created: B79.sig.gz in 2 milliseconds
+loading sigs file: A29.sig.gz
+loaded 13 vertices in 1ms
+loading sigs file: B79.sig.gz
+loaded 4 vertices in 0ms
+
+calculating D_alphas on 2 threads
+7%  [====>                                                           ] ETA 0s   69% [============================================>                   ] ETA 0s   76% [=================================================>              ] ETA 0s   84% [======================================================>         ] ETA 0s   92% [===========================================================>    ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 52 distances in 0s
+
+aligning graphs...
+aligned 4 nodes in 0 milliseconds
+4 nodes aligned
+Edge correctness 4 / 15 = 26.6667%
+ICS = 100%
+
+running PISWAP iteration, 100% unconstrained
+25% [================>                                               ] ETA 0s   50% [================================>                               ] ETA 0s   75% [================================================>               ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 1ms
+4 nodes aligned
+Edge correctness 4 / 15 = 26.6667%
+ICS = 100%
+
+4 nodes aligned
+Edge correctness 4 / 15 = 26.6667%
+ICS = 100%

@@ -1,0 +1,33 @@
+extracted: A48.gexf in 0 milliseconds
+extracted: B19.gexf in 0 milliseconds
+creating: A48.sig.gz
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   50% [================================>                               ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+created: A48.sig.gz in 1 milliseconds
+creating: B19.sig.gz
+4%  [==>                                                             ] ETA 0s   8%  [=====>                                                          ] ETA 0s   13% [========>                                                       ] ETA 0s   17% [===========>                                                    ] ETA 0s   21% [=============>                                                  ] ETA 0s   34% [======================>                                         ] ETA 0s   39% [=========================>                                      ] ETA 0s   43% [===========================>                                    ] ETA 0s   
+created: B19.sig.gz in 6 milliseconds
+loading sigs file: A48.sig.gz
+loaded 6 vertices in 0ms
+loading sigs file: B19.sig.gz
+loaded 23 vertices in 3ms
+
+calculating D_alphas on 2 threads
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+finished calculating 138 distances in 0s
+
+aligning graphs...
+aligned 6 nodes in 0 milliseconds
+6 nodes aligned
+Edge correctness 7 / 7 = 100%
+ICS = 100%
+
+running PISWAP iteration, 100% unconstrained
+16% [==========>                                                     ] ETA 0s   33% [=====================>                                          ] ETA 0s   50% [================================>                               ] ETA 0s   66% [==========================================>                     ] ETA 0s   83% [=====================================================>          ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 1ms
+6 nodes aligned
+Edge correctness 7 / 7 = 100%
+ICS = 100%
+
+6 nodes aligned
+Edge correctness 7 / 7 = 100%
+ICS = 100%

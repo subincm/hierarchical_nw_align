@@ -1,0 +1,11 @@
+extracted: A.gexf in 24 milliseconds
+extracted: B.gexf in 35 milliseconds
+0 nodes aligned
+Edge correctness 0 / 2058 = 0%
+ICS = -nan%
+running PISWAP iteration, 100% unconstrained
+
+added 0 edges in 0ms
+0 nodes aligned
+Edge correctness 0 / 2058 = 0%
+ICS = -nan%

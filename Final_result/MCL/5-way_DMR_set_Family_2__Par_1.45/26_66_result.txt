@@ -1,0 +1,33 @@
+extracted: A26.gexf in 0 milliseconds
+extracted: B66.gexf in 0 milliseconds
+creating: A26.sig.gz
+9%  [=====>                                                          ] ETA 0s   18% [===========>                                                    ] ETA 0s   27% [=================>                                              ] ETA 0s   36% [=======================>                                        ] ETA 0s   45% [=============================>                                  ] ETA 0s   54% [==================================>                             ] ETA 0s   63% [================================================================] ETA 0s   
+created: A26.sig.gz in 4 milliseconds
+creating: B66.sig.gz
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+created: B66.sig.gz in 1 milliseconds
+loading sigs file: A26.sig.gz
+loaded 11 vertices in 1ms
+loading sigs file: B66.sig.gz
+loaded 2 vertices in 0ms
+
+calculating D_alphas on 2 threads
+18% [===========>                                                    ] ETA 0s   27% [=================>                                              ] ETA 0s   36% [=======================>                                        ] ETA 0s   45% [=============================>                                  ] ETA 0s   54% [==================================>                             ] ETA 0s   72% [==============================================>                 ] ETA 0s   90% [==========================================================>     ] ETA 0s   
+finished calculating 22 distances in 0s
+
+aligning graphs...
+aligned 2 nodes in 0 milliseconds
+2 nodes aligned
+Edge correctness 0 / 7 = 0%
+ICS = 0%
+
+running PISWAP iteration, 100% unconstrained
+50% [================================>                               ] ETA 0s   100%[================================================================] ETA 0s   
+added 0 edges in 0ms
+2 nodes aligned
+Edge correctness 0 / 7 = 0%
+ICS = 0%
+
+2 nodes aligned
+Edge correctness 0 / 7 = 0%
+ICS = 0%
